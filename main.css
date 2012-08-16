@@ -1,0 +1,40 @@
+/* CSS for the main file of Cookies Jar */
+
+/* Id's */
+#all
+{
+}
+
+#header
+{
+}
+
+#main
+{
+}
+
+#fileDropArea
+{
+	width: 400px;
+	height: 400px;
+	background-color: grey;
+}
+
+#fileDropInfo
+{
+}
+
+
+#uploadUrl
+{
+}
+
+#uploadStatus
+{
+}
+
+/* Classes */
+.container
+{
+}
+
