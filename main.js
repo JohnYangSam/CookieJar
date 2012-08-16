@@ -41,16 +41,15 @@ var getFileInformationList = function (files) {
 		file = files[i];
 		//Note: array.push allows you to add multiple elements to the end of an array
 		//with commas. Cool array command for Javascript!	
-		output.push('<li>');
-		output.push('File: ' + file.name,
-					' File type: ' + file.type,
-					' File size: ' + file.size,
-					' Modified on: ', file.hasOwnProperty('lastModifiedDate') === true ? file.lastModifiedDate.toDateString() : 'n/a'
+		output.push('<li>File: ' + file.name + '</li>',
+					'<li>File type: ' + file.type + '</li>',
+					'<li>File size: ' + file.size + '</li>',
+					'<li>Modified on: ', file.hasOwnProperty('lastModifiedDate') === true ? file.lastModifiedDate.toDateString() + '</li>' : 'n/a' + '</li>'
 			   );
 	}
 	//String conversations for the entire array are joined together by
 	//the passed in variable (a space in this case)
-	outputStr = '<ul>' + output.join(' ') + '</ul>';
+	outputStr = "<strong>You downloaded: </strong>" + '<ul>' + output.join(' ') + '</ul>';
 	return outputStr;
 };
 
@@ -103,7 +102,7 @@ var fileSelectHandler = function (event) {
 
 	uploadFile(files[0], dropAreaUploadStatus);
 	//replace the standard files uploaded information with the currently loaded files	
-	//standardFilesUploaded.innerHTML = getFileInformationList(files);
+	standardFilesUploaded.innerHTML = getFileInformationList(files);
 	console.log(getFileInformationList(files));
 };
 
@@ -132,7 +131,7 @@ var fileDropHandler = function (event) {
 	fileList = files;
 	//loadNextFile();
 	uploadFile(files[0], dropAreaUploadStatus);
-	//dropAreaUploadStatus.innerHTML = getFileInformationList(files);
+	dropAreaUploadStatus.innerHTML = getFileInformationList(files);
 	console.log(getFileInformationList(files));
 };
 
