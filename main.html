@@ -8,7 +8,7 @@
 		<title>Cookie Jar</title>
 	</head>
 	
-	<body>
+	<body onload="init()">
 		<div id="all">
 			<div id="header">
 			
@@ -30,9 +30,13 @@
 					</div>
 					<canvas></canvas>		
 				</div>
+				<div id="standardUploadArea">
+					<input type="file" id="standardFiles" name="standardFiles[]" multiple />
+					<output id="standardFilesUploaded"></output>
+
+				</div>	
 
 			</div>
-
 
 
 			</div>
