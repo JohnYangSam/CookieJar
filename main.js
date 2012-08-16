@@ -62,15 +62,17 @@ var uploadFile = function (file, statusElement) {
 	'use strict';
 	//Create an XML object
 	var request = new XMLHttpRequest();
-
+	//console.log(file);
 	//Open a new post request to the server
 	request.open('POST', serverURL);
 	
 	//When the XMLHttpRequest loads, set a new element on the
 	//statusElement to show that the file has been uploaded
 	request.onload = function () {
+		'use strict';
 		var newStatus =	document.createElement('p');
 		newStatus.innerHTML = this.responseText;
+		console.log("status");
 		statusElement.append(newStatus);
 	};
 	
@@ -99,7 +101,7 @@ var fileSelectHandler = function (event) {
 	files = event.target.files;
 	//Do something with the files
 
-	uploadFile(files[0], dropAreaUploadStatus);	
+	uploadFile(files[0], dropAreaUploadStatus);
 	//replace the standard files uploaded information with the currently loaded files	
 	//standardFilesUploaded.innerHTML = getFileInformationList(files);
 	console.log(getFileInformationList(files));
@@ -129,7 +131,7 @@ var fileDropHandler = function (event) {
 	//read to the server from it.
 	fileList = files;
 	//loadNextFile();
-	uploadFile(files[0], dropAreaUploadStatus);	
+	uploadFile(files[0], dropAreaUploadStatus);
 	//dropAreaUploadStatus.innerHTML = getFileInformationList(files);
 	console.log(getFileInformationList(files));
 };
